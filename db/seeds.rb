@@ -23,4 +23,12 @@ puts "Creating reviews..."
 # *****************************************************************
 # Create Reviews Here
 
+# create_table "reviews", force: :cascade do |t|
+#     t.integer "star_rating"
+#     t.string "comment"
+#     t.string "product_id"
+#     t.string "user_id"
+
+Review.create(star_rating: 5, comment: "Great", product_id: product1.id, user_id: user1.id)
+Review.create(star_rating: 5, comment: "Fantastic", product_id: product3.id, user_id: user1.id)
 puts "Seeding done!"
