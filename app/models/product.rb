@@ -4,9 +4,6 @@ class Product < ActiveRecord::Base
 
     def leave_review(user, star_rating, comment)
         self.reviews.create(user: user, star_rating: star_rating, comment: comment)
-    
-    def average_rating
-        self.reviews.average(:star_rating)
     end
 
     def print_all_reviews 
@@ -14,5 +11,8 @@ class Product < ActiveRecord::Base
             puts "Review for #{r.product.name} by #{r.user.name}: #{r.star_rating}. #{r.comment}"
         end
     end
-end
+
+    def average_rating
+        self.reviews.average(:star_rating)
+    end
 end

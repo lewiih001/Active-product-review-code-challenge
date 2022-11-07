@@ -3,6 +3,12 @@ class Review < ActiveRecord::Base
     belongs_to :user
 
     def print_review
-        puts "Review for #{self.product.name} by #{self.user.name}: #{insert review star_rating}. #{self.commen
+      def print_review
+        puts <<-REVIEW
+        Review for #{self.product.name} 
+        by #{self.user.name}: #{self.star_rating}. 
+        #{self.comment}
+            REVIEW
     end
+end
 end
